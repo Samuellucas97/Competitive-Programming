@@ -1,1 +1,3 @@
-# Competitive-Programming
+## About
+
+Contains resolution of problems.
