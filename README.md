@@ -1,6 +1,6 @@
 ## About
 
-Contains resolution of problems.
+Contains resolution of Competitive Programming Problems.
 
 
 ## Reference
