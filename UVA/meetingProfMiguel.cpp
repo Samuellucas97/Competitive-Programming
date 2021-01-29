@@ -60,7 +60,26 @@ int main() {
 				}
 			}
 		}
-				
+
+		/**for (int i=0; i < 26;++i) {
+			for (int j=0; j < 26;++j) {
+				cerr << matrixAdjacencyYoung[i][j] << " "; 
+			} 
+			cerr << "\n"; 	
+		}
+		
+		cerr << "\n";
+		
+		for (int i=0; i < 26;++i) {
+			for (int j=0; j < 26;++j) {
+				cerr << matrixAdjacencyAdult[i][j] << " "; 
+			} 
+			cerr << "\n"; 	
+		}
+		
+		cerr << "\n";*/
+		
+		
 		for (int s=0; s<nEdges; ++s) {
 			cin >> permission >> direction >> X >> Y >> energyNecessary;
 		
@@ -94,7 +113,10 @@ int main() {
 				}
 			}
 		}		
-				
+		
+	
+		
+		
 		for (int k = 0; k < 26; ++k) {
 			for (int i = 0; i < 26; ++i) {
 				for (int j = 0; j < 26; ++j) {
@@ -109,6 +131,30 @@ int main() {
 			}
 		}
 		
+		/**for (int i=0; i < 26;++i) {
+			for (int j=0; j < 26;++j) {
+				cerr << distancesYoung[i][j] << " "; 
+			} 
+			cerr << "\n"; 	
+		}
+		
+		cerr << "\n";
+		
+		for (int i=0; i < 26;++i) {
+			for (int j=0; j < 26;++j) {
+				cerr << distancesAdult[i][j] << " "; 
+			} 
+			cerr << "\n"; 	
+		}*/
+		
+		
+		/**for (int i=0; i < 26;++i) {
+			for (int j=0; j < 26;++j) {
+				cerr << distancesAdult[i][j] << " "; 
+			} 
+			cerr << "\n"; 	
+		}*/
+		
 		cin >> myPosition >> professorPosition;
 		
 		if (myPosition == professorPosition) res[0].push_back(myPosition);
@@ -116,6 +162,9 @@ int main() {
 		finalEnergyNecessary = INF;
 		
 		for (int i=0; i < 26; ++i) {
+			//cout <<(char)(i+65) << " " << distancesYoung[myPosition-'A'][i] << " " << distancesAdult[professorPosition-'A'][i] << " "<< matrixAdjacencyYoung[myPosition-'A'][i] <<" " << matrixAdjacencyAdult[professorPosition-'A'][i] << "\n";
+			
+			//cerr << (distancesYoung[myPosition-'A'][i] != INF) << " " << (distancesYoung[professorPosition-'A'][i] != INF) << "\n";
 			if ( distancesYoung[myPosition-'A'][i] != INF && distancesAdult[professorPosition-'A'][i] != INF) {
 		
 				aux = distancesYoung[myPosition-'A'][i] + distancesAdult[professorPosition-'A'][i];
@@ -141,6 +190,10 @@ int main() {
 			finalEnergyNecessary = (*res.begin()).first;			
 			cout << finalEnergyNecessary;
 			
+		//	sort(res[finalEnergyNecessary].begin(), res[finalEnergyNecessary].end(),
+		//		[](unsigned char c1, unsigned char c2){ return std::tolower(c1) < std::tolower(c2); }
+		//	);
+
 			for (auto j: res[finalEnergyNecessary]) {
 				if (resPositions.find(j) == resPositions.end() ) {
 					cout << " " << j;
@@ -152,7 +205,9 @@ int main() {
 		else {
 			cout << "You will never meet.\n";
 		}
+		
 			
+		//cerr << nEdges << "\n\n\n";
 		cin >> nEdges;
 	}
 	

@@ -4,6 +4,7 @@ using namespace std;
 int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
+
 	
 	int m, n;
 	char x;
@@ -37,12 +38,26 @@ int main() {
 			}
 		}
 		
-		res = 0;		
+		res = 0;
+		/**cerr << "VISITADOS: \n";
+		
+		for (auto i: visitados) {
+				cout << "("<< i.first.first << ", " << i.first.second << ") [" << i.second <<  "]  ";
+		}
+		
+		cerr << "NAO VISITADOS: \n";
+		
+		for (auto i: nao_visitados) {
+				cout << "("<< i.first << ", " << i.second << ") \n";
+		}*/
+		
 		
 		while(!nao_visitados.empty()) {
 			++res;
 			
 			k = (*nao_visitados.begin());
+			
+			//cerr << "K = (" << k.first << ", " << k.second << ")\n\n\n";
 			
 			nao_visitados.erase(k);
 			visitados[k]= true;
@@ -81,6 +96,7 @@ int main() {
 				
 			}
 			
+			//cerr << "Size: " << q.size() << "\n";
 			
 			while (!q.empty()) {
 				k = q.front(); q.pop();
