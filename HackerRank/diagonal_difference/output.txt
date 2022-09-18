@@ -1,0 +1,8 @@
+[Left] row[0]=11
+[Right] row[2]=4
+[Left] row[1]=5
+[Right] row[1]=5
+[Left] row[2]=-12
+[Right] row[0]=10
+15
+
